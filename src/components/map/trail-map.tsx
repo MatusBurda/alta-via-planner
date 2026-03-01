@@ -5,6 +5,9 @@ import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import trailData from "@/data/trail-data.json";
 
+// @ts-ignore
+import * as toGeoJSON from "@tmcw/togeojson";
+
 const mapboxToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 if (mapboxToken) {
   mapboxgl.accessToken = mapboxToken;
@@ -36,10 +39,10 @@ export function TrailMap() {
         // Choose marker color based on type
         const color =
           hut.type === "trailhead"
-            ? "#10b981"   // green
+            ? "#10b981" // green
             : hut.type === "hotel"
-            ? "#6366f1"   // purple
-            : "#f59e0b";  // amber for rifugios
+            ? "#6366f1" // purple
+            : "#f59e0b"; // amber for rifugios
 
         // Create popup
         const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(`
@@ -66,6 +69,55 @@ export function TrailMap() {
           .setPopup(popup)
           .addTo(map.current!);
       });
+
+      // After hut markers, fetch and render GPX track
+      (async () => {
+        try {
+          const res = await fetch("/data/alta-via-1.gpx");
+          let gpxText = await res.text();
+          // Strip default GPX namespace so DOMParser + toGeoJSON find elements
+          // (getElementsByTagName doesn't match namespaced elements)
+          gpxText = gpxText.replace(
+            /\s+xmlns="http:\/\/www\.topografix\.com\/GPX\/1\/1"/,
+            ""
+          );
+          const parser = new DOMParser();
+          const xml = parser.parseFromString(gpxText, "application/xml");
+          const geojson = toGeoJSON.gpx(xml);
+
+          // Add the GeoJSON as a source if the map exists and GeoJSON is valid
+          if (map.current && geojson?.features?.length) {
+            // Remove old source/layer if they exist (no duplicate adds)
+            if (map.current.getLayer("gpx-trail")) {
+              map.current.removeLayer("gpx-trail");
+            }
+            if (map.current.getSource("gpx-trail")) {
+              map.current.removeSource("gpx-trail");
+            }
+            map.current.addSource("gpx-trail", {
+              type: "geojson",
+              data: geojson,
+            });
+            map.current.addLayer({
+              id: "gpx-trail",
+              type: "line",
+              source: "gpx-trail",
+              layout: {
+                "line-join": "round",
+                "line-cap": "round",
+              },
+              paint: {
+                "line-color": "#ef4444", // Tailwind red-500
+                "line-width": 3,
+                "line-opacity": 0.72,
+              },
+            });
+          }
+        } catch (e) {
+          // eslint-disable-next-line no-console
+          console.error("Failed to load or parse GPX:", e);
+        }
+      })();
     });
 
     // Cleanup on unmount
