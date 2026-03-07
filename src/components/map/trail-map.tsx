@@ -31,18 +31,48 @@ export function TrailMap() {
 
     map.current.addControl(new mapboxgl.NavigationControl(), "top-right");
 
-    // Add markers for each hut
+    // Display markers for ALL huts from trail-data.json
     map.current.on("load", () => {
-      trailData.huts.forEach((hut) => {
-        if (!hut.lat || !hut.lng || !map.current) return;
+      const m = map.current;
+      if (!m) return;
+
+      const bounds = new mapboxgl.LngLatBounds();
+      let boundsHasPoint = false;
+
+      const extendBoundsDeep = (coords: unknown) => {
+        if (!coords) return;
+        if (Array.isArray(coords)) {
+          // Base case: [lng, lat, ...]
+          if (typeof coords[0] === "number" && typeof coords[1] === "number") {
+            bounds.extend([coords[0], coords[1]]);
+            boundsHasPoint = true;
+            return;
+          }
+          // Recursive case: nested coordinates
+          for (const c of coords) extendBoundsDeep(c);
+        }
+      };
+
+      (trailData.huts ?? []).forEach((hut) => {
+        // Make sure hut has coordinates
+        const lat = typeof hut.lat === "number" ? hut.lat : Number(hut.lat);
+        const lng = typeof hut.lng === "number" ? hut.lng : Number(hut.lng);
+        if (!Number.isFinite(lat) || !Number.isFinite(lng)) return;
 
         // Choose marker color based on type
-        const color =
-          hut.type === "trailhead"
-            ? "#10b981" // green
-            : hut.type === "hotel"
-            ? "#6366f1" // purple
-            : "#f59e0b"; // amber for rifugios
+        let color = "#f59e0b"; // default: rifugio/other amber
+        if (hut.type === "trailhead") color = "#10b981"; // green
+        else if (hut.type === "hotel") color = "#6366f1"; // purple
+
+        // Show if this hut is a detour
+        const detourInfo =
+          hut.on_trail === false && hut.detour_km
+            ? `<p style="margin: 4px 0 0 0; font-size: 11px; color: #f59e0b;">
+            ↗ ${hut.detour_km}km detour${
+                hut.detour_duration_min ? ` (${hut.detour_duration_min} min)` : ""
+              }
+            </p>`
+            : "";
 
         // Create popup
         const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(`
@@ -51,32 +81,34 @@ export function TrailMap() {
               ${hut.name}
             </h3>
             <p style="margin: 0; font-size: 12px; color: #666;">
-              ${hut.altitude_m}m · ${hut.type} · km ${hut.km_from_start}
+              ${hut.altitude_m ?? ""}m · ${hut.type ?? ""}${
+          typeof hut.km_from_start === "number" ? ` · km ${hut.km_from_start}` : ""
+        }
             </p>
-            ${
-              !hut.on_trail
-                ? `<p style="margin: 4px 0 0 0; font-size: 11px; color: #f59e0b;">
-                    ↗ ${hut.detour_km}km detour (${hut.detour_duration_min} min)
-                   </p>`
-                : ""
-            }
+            ${detourInfo}
           </div>
         `);
 
         // Add marker to map
         new mapboxgl.Marker({ color })
-          .setLngLat([hut.lng, hut.lat])
+          .setLngLat([lng, lat])
           .setPopup(popup)
-          .addTo(map.current!);
+          .addTo(m);
+
+        bounds.extend([lng, lat]);
+        boundsHasPoint = true;
       });
+
+      // Ensure all huts are visible initially
+      if (boundsHasPoint) {
+        m.fitBounds(bounds, { padding: 60, maxZoom: 12, duration: 0, pitch: 45 });
+      }
 
       // After hut markers, fetch and render GPX track
       (async () => {
         try {
           const res = await fetch("/data/alta-via-1.gpx");
           let gpxText = await res.text();
-          // Strip default GPX namespace so DOMParser + toGeoJSON find elements
-          // (getElementsByTagName doesn't match namespaced elements)
           gpxText = gpxText.replace(
             /\s+xmlns="http:\/\/www\.topografix\.com\/GPX\/1\/1"/,
             ""
@@ -85,20 +117,18 @@ export function TrailMap() {
           const xml = parser.parseFromString(gpxText, "application/xml");
           const geojson = toGeoJSON.gpx(xml);
 
-          // Add the GeoJSON as a source if the map exists and GeoJSON is valid
-          if (map.current && geojson?.features?.length) {
-            // Remove old source/layer if they exist (no duplicate adds)
-            if (map.current.getLayer("gpx-trail")) {
-              map.current.removeLayer("gpx-trail");
+          if (geojson?.features?.length) {
+            if (m.getLayer("gpx-trail")) {
+              m.removeLayer("gpx-trail");
             }
-            if (map.current.getSource("gpx-trail")) {
-              map.current.removeSource("gpx-trail");
+            if (m.getSource("gpx-trail")) {
+              m.removeSource("gpx-trail");
             }
-            map.current.addSource("gpx-trail", {
+            m.addSource("gpx-trail", {
               type: "geojson",
               data: geojson,
             });
-            map.current.addLayer({
+            m.addLayer({
               id: "gpx-trail",
               type: "line",
               source: "gpx-trail",
@@ -112,6 +142,14 @@ export function TrailMap() {
                 "line-opacity": 0.72,
               },
             });
+
+            // Re-fit bounds to include the GPX line too (plus huts)
+            for (const f of geojson.features) {
+              extendBoundsDeep((f as any)?.geometry?.coordinates);
+            }
+            if (boundsHasPoint) {
+              m.fitBounds(bounds, { padding: 60, maxZoom: 12, duration: 600, pitch: 45 });
+            }
           }
         } catch (e) {
           // eslint-disable-next-line no-console
