@@ -27,7 +27,7 @@ const end = { id: "la_pissa", name: "La Pissa (END)", km_from_start: 120 };
 
 const allPoints = [start, ...huts, end];
 
-const results = findItineraries(allPoints, availability, "2026-05-14", 18, 8);
+const results = findItineraries(allPoints, availability, "2026-05-14", 18, 6);
 
 console.log(`Found ${results.length} possible itineraries`);
 results.slice(0, 5).forEach((itin, idx) => {
@@ -38,13 +38,13 @@ results.slice(0, 5).forEach((itin, idx) => {
 });
 
 // The simplest possible types
-interface Hut {
+export interface Hut {
   id: string;
   name: string;
   km_from_start: number;
 }
 
-interface DayPlan {
+export interface DayPlan {
   day: number;
   date: string;
   from: Hut;
@@ -52,7 +52,7 @@ interface DayPlan {
   distance_km: number;
 }
 
-interface Itinerary {
+export interface Itinerary {
   days: DayPlan[];
   total_days: number;
   total_km: number;
@@ -70,7 +70,7 @@ function balanceScore(itinerary: Itinerary): number {
   }
   
 
-function findItineraries(
+export function findItineraries(
   huts: Hut[],                    // ordered by km_from_start
   availability: Record<string, Record<string, string>>,  // hutId -> date -> status
   startDate: string,              // "2026-07-14"
