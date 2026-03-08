@@ -1,73 +1,1863 @@
-{
-    "trail": {
-      "id": "alta-via-1",
-      "name": "Alta Via 1",
-      "subtitle": "The Dolomites High Route",
-      "region": "Dolomites",
-      "country": "IT",
-      "total_distance_km": 125,
-      "total_elevation_gain_m": 7400,
-      "total_elevation_loss_m": 7900,
-      "typical_days": { "min": 6, "max": 12 },
-      "season": {
-        "start": "06-15",
-        "end": "09-20"
-      }
+[
+  {
+    "id": "lago_di_braies",
+    "name": "Hotel Lago di Braies (START)",
+    "type": "hotel",
+    "km_from_start": 0,
+    "altitude_m": 1494,
+    "lat": 46.698863,
+    "lng": 12.084681,
+
+    "on_trail": true,
+    "detour_km": null,
+    "detour_elevation_gain_m": null,
+    "detour_elevation_loss_m": null,
+    "detour_duration_min": null,
+    "detour_from_km": null,
+
+    "accommodation": {
+      "capacity": null,
+      "room_types": ["private"],
+      "half_board_eur": null,
+      "bed_only_eur": null,
+      "has_showers": true,
+      "hot_water": true,
+      "meals": true,
+      "packed_lunch": null,
+      "charging": true,
+      "wifi": true,
+      "blankets_provided": true,
+      "sleeping_bag_required": false
+    },
+
+    "booking": {
+      "method": "online",
+      "platform": null,
+      "website": "https://www.lagodibraies.com/en/",
+      "booking_url": "https://www.lagodibraies.com/en/",
+      "email": "",
+      "phone": "",
+      "bookings_open": "",
+      "deposit_eur": null,
+      "cancellation_policy": "",
+      "scraper_status": "not_built",
+      "scraper_notes": ""
+    },
+
+    "notes": "Start of Alta Via 1. Large hotel at the iconic Lago di Braies / Pragser Wildsee."
+  },
+
+  {
+    "id": "biella",
+    "name": "Rifugio Biella (Seekofelhütte)",
+    "type": "rifugio",
+    "km_from_start": 10,
+    "altitude_m": 2327,
+    "lat": 46.665631,
+    "lng": 12.084583,
+
+    "on_trail": true,
+    "detour_km": null,
+    "detour_elevation_gain_m": null,
+    "detour_elevation_loss_m": null,
+    "detour_duration_min": null,
+    "detour_from_km": null,
+
+    "accommodation": {
+      "capacity": 46,
+      "room_types": ["private"],
+      "half_board_eur": null,
+      "bed_only_eur": null,
+      "has_showers": true,
+      "hot_water": null,
+      "meals": true,
+      "packed_lunch": null,
+      "charging": true,
+      "wifi": null,
+      "blankets_provided": null,
+      "sleeping_bag_required": null
+    },
+
+    "booking": {
+      "method": "online",
+      "platform": null,
+      "website": "https://rifugiobiella.it/en/",
+      "booking_url": "https://rifugiobiella.it/en/contact/",
+      "email": "info@rifugiobiella.com",
+      "phone": "+39 349 2890550",
+      "bookings_open": "",
+      "deposit_eur": null,
+      "cancellation_policy": "50% deposit non-refundable",
+      "scraper_status": "not_built",
+      "scraper_notes": ""
+    },
+
+    "notes": "First rifugio on AV1. 8 bedrooms with 46 beds, 4 toilets, 6 washbasins. Squat toilets. E-bike charging available. Winter bivouac 100m away when closed."
+  },
+
+  {
+    "id": "sennes",
+    "name": "Rifugio Sennes (Senneshütte)",
+    "type": "rifugio",
+    "km_from_start": 13,
+    "altitude_m": 2126,
+    "lat": 46.653640,
+    "lng": 12.059425,
+
+    "on_trail": true,
+    "detour_km": null,
+    "detour_elevation_gain_m": null,
+    "detour_elevation_loss_m": null,
+    "detour_duration_min": null,
+    "detour_from_km": null,
+
+    "accommodation": {
+      "capacity": 40,
+      "room_types": ["dorm", "private"],
+      "half_board_eur": null,
+      "bed_only_eur": null,
+      "has_showers": true,
+      "hot_water": true,
+      "meals": true,
+      "packed_lunch": null,
+      "charging": null,
+      "wifi": true,
+      "blankets_provided": true,
+      "sleeping_bag_required": true
+    },
+
+    "booking": {
+      "method": "online",
+      "platform": "suedtirol.info",
+      "website": "https://www.sennes.com/en/",
+      "booking_url": "https://www.sennes.com/en/tour/the-rooms/index.php",
+      "email": "info@sennes.com",
+      "phone": "+39 0474 646355",
+      "bookings_open": "",
+      "deposit_eur": null,
+      "cancellation_policy": "",
+      "scraper_status": "not_built",
+      "scraper_notes": ""
+    },
+
+    "notes": "Family-run. Private rooms have bed linen and towels. Dormitory/bunk room requires sleeping bag (liner can be rented). Wifi weak. Some rooms with private shower/WC. No pets."
+  },
+
+  {
+    "id": "munt_de_sennes",
+    "name": "Rifugio Munt de Sennes (Schutzhütte Sennesalm)",
+    "type": "rifugio",
+    "km_from_start": 14,
+    "altitude_m": 2176,
+    "lat": 46.658862,
+    "lng": 12.048765,
+
+    "on_trail": false,
+    "detour_km": 1.0,
+    "detour_elevation_gain_m": 50,
+    "detour_elevation_loss_m": null,
+    "detour_duration_min": 15,
+    "detour_from_km": 13,
+
+    "accommodation": {
+      "capacity": 15,
+      "room_types": ["dorm", "private"],
+      "half_board_eur": null,
+      "bed_only_eur": null,
+      "has_showers": true,
+      "hot_water": true,
+      "meals": true,
+      "packed_lunch": null,
+      "charging": null,
+      "wifi": null,
+      "blankets_provided": true,
+      "sleeping_bag_required": false
+    },
+
+    "booking": {
+      "method": "email / phone",
+      "platform": "suedtirol.info",
+      "website": "https://www.rifugiomuntdesennes.com/",
+      "booking_url": "https://www.rifugiomuntdesennes.com/",
+      "email": "muntdesennes@gmail.com",
+      "phone": "+39 340 5710449",
+      "bookings_open": "Season: 01 Jul – 30 Sep",
+      "deposit_eur": null,
+      "cancellation_policy": "",
+      "scraper_status": "not_built",
+      "scraper_notes": ""
+    },
+
+    "notes": "Tiny, highly rated gem on the Sennes plateau. Only 15 beds. Run by Lukas and Lucia. Own production of cheese, butter, and dairy. Winter duvet and blanket provided (no sleeping bag needed). Cold running water, WC, heating, lighting. Cattle, chickens, and marmots on site. One of the cheapest huts on the route."
+  },
+
+  {
+    "id": "fodara_vedla",
+    "name": "Rifugio Fodara Vedla",
+    "type": "rifugio",
+    "km_from_start": 14,
+    "altitude_m": 1980,
+    "lat": 46.635634,
+    "lng": 12.060947,
+
+    "on_trail": false,
+    "detour_km": 1.0,
+    "detour_elevation_gain_m": null,
+    "detour_elevation_loss_m": null,
+    "detour_duration_min": null,
+    "detour_from_km": 13,
+
+    "accommodation": {
+      "capacity": 42,
+      "room_types": ["dorm", "private"],
+      "half_board_eur": null,
+      "bed_only_eur": null,
+      "has_showers": true,
+      "hot_water": true,
+      "meals": true,
+      "packed_lunch": null,
+      "charging": null,
+      "wifi": null,
+      "blankets_provided": true,
+      "sleeping_bag_required": true
+    },
+
+    "booking": {
+      "method": "online / phone",
+      "platform": "suedtirol.info",
+      "website": "https://www.fodara.it/en",
+      "booking_url": "https://www.fodara.it/en",
+      "email": "",
+      "phone": "",
+      "bookings_open": "",
+      "deposit_eur": null,
+      "cancellation_policy": "",
+      "scraper_status": "not_built",
+      "scraper_notes": ""
+    },
+
+    "notes": "Highly rated by hikers – often called best rifugio on AV1. 12 rooms with private shower/WC and some with balcony. Dorms also available (sleeping bag required). Family-run by Mutschlechner family since 1923. No pets. Excellent homemade food with garden salads."
+  },
+
+  {
+    "id": "pederu",
+    "name": "Rifugio Pederü",
+    "type": "rifugio",
+    "km_from_start": 17,
+    "altitude_m": 1548,
+    "lat": 46.638404,
+    "lng": 12.041373,
+
+    "on_trail": true,
+    "detour_km": null,
+    "detour_elevation_gain_m": null,
+    "detour_elevation_loss_m": null,
+    "detour_duration_min": null,
+    "detour_from_km": null,
+
+    "accommodation": {
+      "capacity": null,
+      "room_types": ["dorm", "private"],
+      "half_board_eur": null,
+      "bed_only_eur": null,
+      "has_showers": true,
+      "hot_water": true,
+      "meals": true,
+      "packed_lunch": null,
+      "charging": null,
+      "wifi": null,
+      "blankets_provided": null,
+      "sleeping_bag_required": null
+    },
+
+    "booking": {
+      "method": "online",
+      "platform": null,
+      "website": "https://www.pederue.it/en",
+      "booking_url": "https://www.pederue.it/en",
+      "email": "",
+      "phone": "",
+      "bookings_open": "",
+      "deposit_eur": null,
+      "cancellation_policy": "",
+      "scraper_status": "not_built",
+      "scraper_notes": ""
+    },
+
+    "notes": "Located in valley between Sennes plateau and Fanes plateau. Modern frosted-glass showers. Access point from San Vigilio di Marebbe by car or bus."
+  },
+
+  {
+    "id": "lavarella",
+    "name": "Rifugio Lavarella",
+    "type": "rifugio",
+    "km_from_start": 21,
+    "altitude_m": 2042,
+    "lat": 46.611226,
+    "lng": 12.006986,
+
+    "on_trail": true,
+    "detour_km": null,
+    "detour_elevation_gain_m": null,
+    "detour_elevation_loss_m": null,
+    "detour_duration_min": null,
+    "detour_from_km": null,
+
+    "accommodation": {
+      "capacity": 51,
+      "room_types": ["dorm", "private"],
+      "half_board_eur": null,
+      "bed_only_eur": null,
+      "has_showers": true,
+      "hot_water": true,
+      "meals": true,
+      "packed_lunch": null,
+      "charging": null,
+      "wifi": null,
+      "blankets_provided": true,
+      "sleeping_bag_required": true
+    },
+
+    "booking": {
+      "method": "phone / email",
+      "platform": null,
+      "website": "https://lavarella.it/",
+      "booking_url": "https://lavarella.it/en/accommodation",
+      "email": "rifugio@lavarella.it",
+      "phone": "+39 0474 501094",
+      "bookings_open": "",
+      "deposit_eur": null,
+      "cancellation_policy": "",
+      "scraper_status": "not_built",
+      "scraper_notes": ""
+    },
+
+    "notes": "26 beds in private rooms + 25 bunks in dorms (5, 7, or 10 beds). Dorms: no bed linen, sleeping bag required (can rent). Towels not provided. Finnish sauna. On-site microbrewery (one of the highest in Europe). No pets."
+  },
+
+  {
+    "id": "fanes",
+    "name": "Rifugio Fanes",
+    "type": "rifugio",
+    "km_from_start": 22,
+    "altitude_m": 2060,
+    "lat": 46.612186,
+    "lng": 12.014237,
+
+    "on_trail": true,
+    "detour_km": null,
+    "detour_elevation_gain_m": null,
+    "detour_elevation_loss_m": null,
+    "detour_duration_min": null,
+    "detour_from_km": null,
+
+    "accommodation": {
+      "capacity": 70,
+      "room_types": ["dorm", "private"],
+      "half_board_eur": null,
+      "bed_only_eur": null,
+      "has_showers": true,
+      "hot_water": true,
+      "meals": true,
+      "packed_lunch": null,
+      "charging": null,
+      "wifi": true,
+      "blankets_provided": true,
+      "sleeping_bag_required": true
+    },
+
+    "booking": {
+      "method": "online",
+      "platform": "suedtirol.info",
+      "website": "https://www.rifugiofanes.com/",
+      "booking_url": "https://www.rifugiofanes.com/en/booking",
+      "email": "info@rifugiofanes.com",
+      "phone": "+39 0474 453001",
+      "bookings_open": "",
+      "deposit_eur": null,
+      "cancellation_policy": "Deposit required to confirm booking",
+      "scraper_status": "not_built",
+      "scraper_notes": ""
+    },
+
+    "notes": "Opened 1928. Rooms from 1-5 beds + 11-bed dorm. Some doubles with private bathroom (king bed, TV, wifi, hairdryer). Dorm requires sleeping bag, towels, slippers. Accepts cash, bancomat, credit card. Solar powered. Check-in 14:00-18:00."
+  },
+
+  {
+    "id": "muntagnoles",
+    "name": "Ütia dles Muntagnoles",
+    "type": "b_and_b",
+    "km_from_start": 22,
+    "altitude_m": 2022,
+    "lat": 46.614805,
+    "lng": 12.013313,
+
+    "on_trail": false,
+    "detour_km": 0.3,
+    "detour_elevation_gain_m": null,
+    "detour_elevation_loss_m": null,
+    "detour_duration_min": 5,
+    "detour_from_km": 22,
+
+    "accommodation": {
+      "capacity": null,
+      "room_types": ["private"],
+      "half_board_eur": null,
+      "bed_only_eur": null,
+      "has_showers": null,
+      "hot_water": null,
+      "meals": true,
+      "packed_lunch": null,
+      "charging": null,
+      "wifi": null,
+      "blankets_provided": null,
+      "sleeping_bag_required": null
+    },
+
+    "booking": {
+      "method": "email / phone",
+      "platform": "dolomitisuperski.com",
+      "website": "http://www.muntagnoles.com",
+      "booking_url": "http://www.muntagnoles.com",
+      "email": "info@muntagnoles.com",
+      "phone": "+39 347 5214753",
+      "bookings_open": "Season: Jun – Oct",
+      "deposit_eur": null,
+      "cancellation_policy": "",
+      "scraper_status": "not_built",
+      "scraper_notes": ""
+    },
+
+    "notes": "Rustic B&B / mountain hut on the Fanes plateau, very near Rifugio Fanes and Lavarella. Known as 'Marmot Hut'. Simple and cozy rooms. Traditional Ladin cuisine with local ingredients. Accessible via 1.5h walk from Pederü. Open June to October, closed in winter. Family-run. Taxi service available."
+  },
+
+  {
+    "id": "gran_fanes",
+    "name": "Ütia de Gran Fanes (Malga Gran Fanes / Grossfaneshütte)",
+    "type": "malga",
+    "km_from_start": 25,
+    "altitude_m": 2102,
+    "lat": 46.597207,
+    "lng": 12.022640,
+
+    "on_trail": true,
+    "detour_km": null,
+    "detour_elevation_gain_m": null,
+    "detour_elevation_loss_m": null,
+    "detour_duration_min": null,
+    "detour_from_km": null,
+
+    "accommodation": null,
+
+    "booking": null,
+
+    "notes": "⚠️ NO OVERNIGHT ACCOMMODATION — food & drink stop only. Small, rustic, family-run alpine dairy on the Gran Fanes pasture. Serves charcuterie, beer, espresso, coffee and cake. Resident donkeys, horses, and cows. Located on Trail 11 / Alta Via 1, about 40 minutes north of Rifugio Fanes. Great lunch stop."
+  },
+
+  {
+    "id": "capanna_alpina",
+    "name": "Capanna Alpina",
+    "type": "restaurant",
+    "km_from_start": 27,
+    "altitude_m": 1726,
+    "lat": 46.560000,
+    "lng": 11.982189,
+
+    "on_trail": false,
+    "detour_km": 3.0,
+    "detour_elevation_gain_m": null,
+    "detour_elevation_loss_m": 350,
+    "detour_duration_min": null,
+    "detour_from_km": 25,
+
+    "accommodation": null,
+
+    "booking": null,
+
+    "notes": "⚠️ NO OVERNIGHT ACCOMMODATION — restaurant only. Located near San Cassiano at 1726m. Starting point for hikes to Rifugio Fanes and Rifugio Scotoni. Fee-based parking on site; free parking available at Sarè/Sciarè nearby. Bus stop (bus No 465). On the easier AV1 variant route via Col de Locia (avoids Forcella del Lago). 2 km / 250m ascent / 50 min walk to Rifugio Scotoni. Phone: +39 0471 849418."
+  },
+
+  {
+    "id": "scotoni",
+    "name": "Rifugio Scotoni",
+    "type": "rifugio",
+    "km_from_start": 29,
+    "altitude_m": 1985,
+    "lat": 46.553101,
+    "lng": 11.998397,
+
+    "on_trail": false,
+    "detour_km": 1.0,
+    "detour_elevation_gain_m": null,
+    "detour_elevation_loss_m": null,
+    "detour_duration_min": 20,
+    "detour_from_km": 28,
+
+    "accommodation": {
+      "capacity": 20,
+      "room_types": ["dorm"],
+      "half_board_eur": null,
+      "bed_only_eur": null,
+      "has_showers": true,
+      "hot_water": null,
+      "meals": true,
+      "packed_lunch": null,
+      "charging": null,
+      "wifi": null,
+      "blankets_provided": null,
+      "sleeping_bag_required": null
+    },
+
+    "booking": {
+      "method": "online / email",
+      "platform": null,
+      "website": "https://www.scotoni.it/en/",
+      "booking_url": "https://www.scotoni.it/en/",
+      "email": "info@scotoni.it",
+      "phone": "+39 0471 847330",
+      "bookings_open": "Summer: 06.06 - 05.10",
+      "deposit_eur": null,
+      "cancellation_policy": "",
+      "scraper_status": "not_built",
+      "scraper_notes": ""
+    },
+
+    "notes": "Small hut with 20 beds (summer only). Famous for open grill cuisine and wine selection (700+ labels). Some dorm rooms with en-suite bathrooms. Gluten-free options. Children's playground and alpaca park. New exclusive 'Barrel' room with private outdoor whirlpool."
+  },
+
+  {
+    "id": "valparola",
+    "name": "Rifugio Valparola",
+    "type": "rifugio",
+    "km_from_start": 32,
+    "altitude_m": 2168,
+    "lat": 46.531669,
+    "lng": 11.988393,
+
+    "on_trail": false,
+    "detour_km": 3.0,
+    "detour_elevation_gain_m": null,
+    "detour_elevation_loss_m": null,
+    "detour_duration_min": null,
+    "detour_from_km": 30,
+
+    "accommodation": {
+      "capacity": null,
+      "room_types": null,
+      "half_board_eur": null,
+      "bed_only_eur": null,
+      "has_showers": null,
+      "hot_water": null,
+      "meals": true,
+      "packed_lunch": null,
+      "charging": null,
+      "wifi": null,
+      "blankets_provided": null,
+      "sleeping_bag_required": null
+    },
+
+    "booking": {
+      "method": "email",
+      "platform": null,
+      "website": "",
+      "booking_url": "",
+      "email": "rifugiovalparola@gmail.com",
+      "phone": "+39 0471 1930221",
+      "bookings_open": "",
+      "deposit_eur": null,
+      "cancellation_policy": "",
+      "scraper_status": "not_built",
+      "scraper_notes": ""
+    },
+
+    "notes": "Located on Passo Valparola, west of Falzarego Pass. Also houses a WWI museum."
+  },
+
+  {
+    "id": "lagazuoi",
+    "name": "Rifugio Lagazuoi",
+    "type": "rifugio",
+    "km_from_start": 35,
+    "altitude_m": 2752,
+    "lat": 46.527738,
+    "lng": 12.008118,
+
+    "on_trail": true,
+    "detour_km": null,
+    "detour_elevation_gain_m": null,
+    "detour_elevation_loss_m": null,
+    "detour_duration_min": null,
+    "detour_from_km": null,
+
+    "accommodation": {
+      "capacity": 74,
+      "room_types": ["dorm", "private"],
+      "half_board_eur": null,
+      "bed_only_eur": null,
+      "has_showers": true,
+      "hot_water": true,
+      "meals": true,
+      "packed_lunch": true,
+      "charging": true,
+      "wifi": null,
+      "blankets_provided": true,
+      "sleeping_bag_required": false
+    },
+
+    "booking": {
+      "method": "online / email",
+      "platform": null,
+      "website": "https://rifugiolagazuoi.com/index_en.php",
+      "booking_url": "https://rifugiolagazuoi.com/EN/disponibilita.php",
+      "email": "booking@rifugiolagazuoi.com",
+      "phone": "+39 0436 867303",
+      "bookings_open": "",
+      "deposit_eur": null,
+      "cancellation_policy": "50% deposit non-refundable. Full charge if cancelled <3 days before or no-show.",
+      "scraper_status": "not_built",
+      "scraper_notes": ""
+    },
+
+    "notes": "Highest and largest hut in Cortina d'Ampezzo. 18 beds in private rooms (some with balcony, wood furnished, bed linen) + 56 in dorms (mattress cover/eiderdown provided, bed linen not). 3 floors. Finnish sauna at 2752m (€25 for overnighters, 30min). Packed lunch €13. Shower €5 (25L ~4min). Separate M/F bathrooms. Open year-round. Run by Pompanin family."
+  },
+
+  {
+    "id": "col_gallina",
+    "name": "Rifugio Col Gallina",
+    "type": "rifugio",
+    "km_from_start": 36,
+    "altitude_m": 2055,
+    "lat": 46.519644,
+    "lng": 12.017221,
+
+    "on_trail": false,
+    "detour_km": 1.0,
+    "detour_elevation_gain_m": null,
+    "detour_elevation_loss_m": null,
+    "detour_duration_min": null,
+    "detour_from_km": 35,
+
+    "accommodation": {
+      "capacity": null,
+      "room_types": ["dorm", "private"],
+      "half_board_eur": null,
+      "bed_only_eur": null,
+      "has_showers": null,
+      "hot_water": null,
+      "meals": true,
+      "packed_lunch": null,
+      "charging": null,
+      "wifi": null,
+      "blankets_provided": null,
+      "sleeping_bag_required": null
+    },
+
+    "booking": {
+      "method": "online / email",
+      "platform": null,
+      "website": "https://www.rifugiocolgallina.com/en/",
+      "booking_url": "https://www.rifugiocolgallina.com/en/",
+      "email": "info@rifugiocolgallina.com",
+      "phone": "+39 0436 2939",
+      "bookings_open": "",
+      "deposit_eur": null,
+      "cancellation_policy": "",
+      "scraper_status": "not_built",
+      "scraper_notes": ""
+    },
+
+    "notes": "At Falzarego Pass. Mobile: +39 339 4425105."
+  },
+
+  {
+    "id": "al_sasso_di_stria",
+    "name": "Hotel Al Sasso di Stria",
+    "type": "hotel",
+    "km_from_start": 37,
+    "altitude_m": 1935,
+    "lat": 46.514038,
+    "lng": 12.001993,
+
+    "on_trail": false,
+    "detour_km": 2.0,
+    "detour_elevation_gain_m": null,
+    "detour_elevation_loss_m": null,
+    "detour_duration_min": null,
+    "detour_from_km": 35,
+
+    "accommodation": {
+      "capacity": null,
+      "room_types": ["private"],
+      "half_board_eur": null,
+      "bed_only_eur": null,
+      "has_showers": true,
+      "hot_water": true,
+      "meals": true,
+      "packed_lunch": null,
+      "charging": true,
+      "wifi": true,
+      "blankets_provided": true,
+      "sleeping_bag_required": false
+    },
+
+    "booking": {
+      "method": "online",
+      "platform": null,
+      "website": "https://alsassodistria.it/en/",
+      "booking_url": "https://alsassodistria.it/en/",
+      "email": "",
+      "phone": "",
+      "bookings_open": "",
+      "deposit_eur": null,
+      "cancellation_policy": "",
+      "scraper_status": "not_built",
+      "scraper_notes": ""
+    },
+
+    "notes": "⭐ User recommendation! Full hotel ~2km below Falzarego Pass. Private rooms, restaurant, hot showers – a great comfort upgrade night."
+  },
+
+  {
+    "id": "dibona",
+    "name": "Rifugio Dibona",
+    "type": "rifugio",
+    "km_from_start": 38,
+    "altitude_m": 2037,
+    "lat": 46.532398,
+    "lng": 12.069905,
+
+    "on_trail": false,
+    "detour_km": 3.0,
+    "detour_elevation_gain_m": null,
+    "detour_elevation_loss_m": null,
+    "detour_duration_min": null,
+    "detour_from_km": 36,
+
+    "accommodation": {
+      "capacity": null,
+      "room_types": ["dorm", "private"],
+      "half_board_eur": null,
+      "bed_only_eur": null,
+      "has_showers": null,
+      "hot_water": null,
+      "meals": true,
+      "packed_lunch": null,
+      "charging": null,
+      "wifi": null,
+      "blankets_provided": null,
+      "sleeping_bag_required": null
+    },
+
+    "booking": {
+      "method": "online / email",
+      "platform": null,
+      "website": "https://www.rifugiodibona.it",
+      "booking_url": "https://www.rifugiodibona.it",
+      "email": "rifugiodibona@gmail.com",
+      "phone": "+39 0436 860294",
+      "bookings_open": "",
+      "deposit_eur": null,
+      "cancellation_policy": "",
+      "scraper_status": "not_built",
+      "scraper_notes": ""
+    },
+
+    "notes": "In Cortina d'Ampezzo area. Good option if staying at Scotoni the night before."
+  },
+
+  {
+    "id": "averau",
+    "name": "Rifugio Averau",
+    "type": "rifugio",
+    "km_from_start": 40,
+    "altitude_m": 2413,
+    "lat": 46.499579,
+    "lng": 12.040586,
+
+    "on_trail": true,
+    "detour_km": null,
+    "detour_elevation_gain_m": null,
+    "detour_elevation_loss_m": null,
+    "detour_duration_min": null,
+    "detour_from_km": null,
+
+    "accommodation": {
+      "capacity": null,
+      "room_types": ["dorm", "private"],
+      "half_board_eur": null,
+      "bed_only_eur": null,
+      "has_showers": null,
+      "hot_water": null,
+      "meals": true,
+      "packed_lunch": null,
+      "charging": null,
+      "wifi": null,
+      "blankets_provided": null,
+      "sleeping_bag_required": null
+    },
+
+    "booking": {
+      "method": "online / email",
+      "platform": null,
+      "website": "https://www.rifugioaverau.it/",
+      "booking_url": "https://www.rifugioaverau.it/",
+      "email": "rifugioaverau@gmail.com",
+      "phone": "+39 0436 4660",
+      "bookings_open": "",
+      "deposit_eur": null,
+      "cancellation_policy": "",
+      "scraper_status": "not_built",
+      "scraper_notes": ""
+    },
+
+    "notes": "Mobile: +39 335 6868066."
+  },
+
+  {
+    "id": "nuvolau",
+    "name": "Rifugio Nuvolau",
+    "type": "rifugio",
+    "km_from_start": 42,
+    "altitude_m": 2575,
+    "lat": 46.495245,
+    "lng": 12.045732,
+
+    "on_trail": true,
+    "detour_km": null,
+    "detour_elevation_gain_m": null,
+    "detour_elevation_loss_m": null,
+    "detour_duration_min": null,
+    "detour_from_km": null,
+
+    "accommodation": {
+      "capacity": null,
+      "room_types": ["dorm"],
+      "half_board_eur": null,
+      "bed_only_eur": null,
+      "has_showers": null,
+      "hot_water": null,
+      "meals": true,
+      "packed_lunch": null,
+      "charging": null,
+      "wifi": null,
+      "blankets_provided": null,
+      "sleeping_bag_required": null
+    },
+
+    "booking": {
+      "method": "online / email",
+      "platform": null,
+      "website": "https://rifugionuvolau.it/",
+      "booking_url": "https://rifugionuvolau.it/",
+      "email": "info@rifugionuvolau.it",
+      "phone": "+39 0436 867938",
+      "bookings_open": "",
+      "deposit_eur": null,
+      "cancellation_policy": "",
+      "scraper_status": "not_built",
+      "scraper_notes": ""
+    },
+
+    "notes": "Oldest mountain hut in the Dolomites, established 1883. Small and intimate. Incredible 360° panoramic views."
+  },
+
+  {
+    "id": "scoiattoli",
+    "name": "Rifugio Scoiattoli",
+    "type": "rifugio",
+    "km_from_start": 43,
+    "altitude_m": 2255,
+    "lat": 46.508090,
+    "lng": 12.046771,
+
+    "on_trail": true,
+    "detour_km": null,
+    "detour_elevation_gain_m": null,
+    "detour_elevation_loss_m": null,
+    "detour_duration_min": null,
+    "detour_from_km": null,
+
+    "accommodation": {
+      "capacity": null,
+      "room_types": ["dorm", "private"],
+      "half_board_eur": null,
+      "bed_only_eur": null,
+      "has_showers": null,
+      "hot_water": null,
+      "meals": true,
+      "packed_lunch": null,
+      "charging": null,
+      "wifi": null,
+      "blankets_provided": null,
+      "sleeping_bag_required": null
+    },
+
+    "booking": {
+      "method": "online / email",
+      "platform": null,
+      "website": "https://www.rifugioscoiattoli.it/",
+      "booking_url": "https://www.rifugioscoiattoli.it/",
+      "email": "info@rifugioscoiattoli.it",
+      "phone": "+39 0436 867939",
+      "bookings_open": "",
+      "deposit_eur": null,
+      "cancellation_policy": "",
+      "scraper_status": "not_built",
+      "scraper_notes": ""
+    },
+
+    "notes": "Accessible by chairlift from Cinque Torri area. Mobile: +39 333 8146960."
+  },
+
+  {
+    "id": "cinque_torri",
+    "name": "Rifugio Cinque Torri (5 Torri)",
+    "type": "rifugio",
+    "km_from_start": 45,
+    "altitude_m": 2137,
+    "lat": 46.508219,
+    "lng": 12.054732,
+
+    "on_trail": true,
+    "detour_km": null,
+    "detour_elevation_gain_m": null,
+    "detour_elevation_loss_m": null,
+    "detour_duration_min": null,
+    "detour_from_km": null,
+
+    "accommodation": {
+      "capacity": null,
+      "room_types": ["dorm", "private"],
+      "half_board_eur": null,
+      "bed_only_eur": null,
+      "has_showers": null,
+      "hot_water": null,
+      "meals": true,
+      "packed_lunch": null,
+      "charging": null,
+      "wifi": null,
+      "blankets_provided": null,
+      "sleeping_bag_required": null
+    },
+
+    "booking": {
+      "method": "email",
+      "platform": null,
+      "website": "https://www.rifugio5torri.it",
+      "booking_url": "",
+      "email": "info@rifugio5torri.it",
+      "phone": "+39 0436 2902",
+      "bookings_open": "",
+      "deposit_eur": null,
+      "cancellation_policy": "",
+      "scraper_status": "not_built",
+      "scraper_notes": ""
+    },
+
+    "notes": "Shower €5 for unlimited hot water."
+  },
+
+  {
+    "id": "fedare",
+    "name": "Rifugio Fedare",
+    "type": "rifugio",
+    "km_from_start": 48,
+    "altitude_m": 2000,
+    "lat": 46.487493,
+    "lng": 12.034006,
+
+    "on_trail": false,
+    "detour_km": 2.0,
+    "detour_elevation_gain_m": null,
+    "detour_elevation_loss_m": null,
+    "detour_duration_min": null,
+    "detour_from_km": 47,
+
+    "accommodation": {
+      "capacity": null,
+      "room_types": null,
+      "half_board_eur": null,
+      "bed_only_eur": null,
+      "has_showers": null,
+      "hot_water": null,
+      "meals": true,
+      "packed_lunch": null,
+      "charging": null,
+      "wifi": null,
+      "blankets_provided": null,
+      "sleeping_bag_required": null
+    },
+
+    "booking": {
+      "method": "",
+      "platform": null,
+      "website": "",
+      "booking_url": "",
+      "email": "",
+      "phone": "",
+      "bookings_open": "",
+      "deposit_eur": null,
+      "cancellation_policy": "",
+      "scraper_status": "not_built",
+      "scraper_notes": ""
+    },
+
+    "notes": "On the Giau Pass road. Open throughout the year."
+  },
+  {
+    "id": "malga_federa",
+    "name": "Malga Federa",
+    "type": "malga",
+    "km_from_start": 48,
+    "altitude_m": 1800,
+    "lat": 46.488144,
+    "lng": 12.115762,
+  
+    "on_trail": false,
+    "detour_km": 3.0,
+    "detour_elevation_gain_m": 400,
+    "detour_elevation_loss_m": 200,
+    "detour_duration_min": 90,
+    "detour_from_km": 45,
+  
+    "accommodation": {
+      "capacity": 12,
+      "room_types": ["private"],
+      "half_board_eur": null,
+      "bed_only_eur": null,
+      "has_showers": true,
+      "hot_water": true,
+      "meals": true,
+      "packed_lunch": null,
+      "charging": true,
+      "wifi": true,
+      "blankets_provided": true,
+      "sleeping_bag_required": false
     },
   
-    "huts": [
-      {
-        "id": "braies",
-        "name": "Lago di Braies",
-        "type": "trailhead",
-        "km_from_start": 0,
-        "altitude_m": 1494,
-        "lat": 46.694,
-        "lng": 12.085,
-        "on_trail": true,
-        "detour_km": 0,
-        "detour_elevation_gain_m": 0,
-        "detour_elevation_loss_m": 0,
-        "detour_duration_min": 0,
-        "accommodation": null
-      },
-      {
-        "id": "biella",
-        "name": "Rifugio Biella",
-        "type": "rifugio",
-        "km_from_start": 12,
-        "altitude_m": 2327,
-        "lat": 46.636,
-        "lng": 12.072,
-        "on_trail": true,
-        "detour_km": 0,
-        "detour_elevation_gain_m": 0,
-        "detour_elevation_loss_m": 0,
-        "detour_duration_min": 0,
-        "accommodation": {
-          "capacity": null,
-          "room_types": ["dorm"],
-          "has_showers": null,
-          "meals": true
-        },
-        "booking": {
-          "method": "online",
-          "website": "",
-          "booking_url": "",
-          "email": "",
-          "phone": ""
-        }
-      }
-    ],
+    "booking": {
+      "method": "online / phone",
+      "platform": "dolomitisuperski.com",
+      "website": "https://www.malgafedera.it/en/",
+      "booking_url": "https://www.malgafedera.it/en/",
+      "email": "info@malgafedera.eu",
+      "phone": "+39 389 1816769",
+      "bookings_open": "Season: early Jun – early Sep & early Dec – Mar",
+      "deposit_eur": null,
+      "cancellation_policy": "",
+      "scraper_status": "not_built",
+      "scraper_notes": "CIN: IT025016B5LRLQ6WX8"
+    },
   
-    "segments": [
-      {
-        "from": "braies",
-        "to": "biella",
-        "distance_km": 12,
-        "elevation_gain_m": 900,
-        "elevation_loss_m": 300,
-        "duration_h": 3.5
-      }
-    ]
+    "notes": "Gorgeous bookable malga (alpine farmhouse) with 5 rooms (4 doubles + 1 quad), ALL with private bathrooms — a rare luxury on AV1! At 1,800m in a clearing at the foot of Becco di Mezzodì and Croda da Lago. Run by the Bernardi Amedeo family. Traditional Ampezzo cuisine with fresh, genuine products. Shuttle service available (jeep in summer, snowmobile in winter). Located 2 km below Rifugio Croda da Lago on trail 432. On the AV1 short variant (via Forcella Ambrizzola, skipping Passo Giau). Also phone: +39 324 9249678. ~£102/night avg. Open also in winter (Dec–Mar). AV1 hikers have rated it 5/5 on TripAdvisor. Coordinates approximate — verify on Google Maps."
+  },
+  {
+    "id": "croda_da_lago",
+    "name": "Rifugio Croda da Lago",
+    "type": "rifugio",
+    "km_from_start": 50,
+    "altitude_m": 2046,
+    "lat": 46.486506,
+    "lng": 12.105749,
+  
+    "on_trail": false,
+    "detour_km": 5.0,
+    "detour_elevation_gain_m": 500,
+    "detour_elevation_loss_m": 400,
+    "detour_duration_min": 120,
+    "detour_from_km": 45,
+  
+    "accommodation": {
+      "capacity": 51,
+      "room_types": ["dorm"],
+      "half_board_eur": null,
+      "bed_only_eur": null,
+      "has_showers": true,
+      "hot_water": true,
+      "meals": true,
+      "packed_lunch": null,
+      "charging": true,
+      "wifi": true,
+      "blankets_provided": null,
+      "sleeping_bag_required": null
+    },
+  
+    "booking": {
+      "method": "online",
+      "platform": "prenotarifugi.cai.it",
+      "website": "https://www.crodadalago.it/en/",
+      "booking_url": "https://www.crodadalago.it/en/",
+      "email": "",
+      "phone": "+39 0436 862085",
+      "bookings_open": "2026 bookings open Dec 1, 2025",
+      "deposit_eur": null,
+      "cancellation_policy": "",
+      "scraper_status": "not_built",
+      "scraper_notes": ""
+    },
+  
+    "notes": "On the official AV1 'short variant' — diverges from main route at Rifugio Scoiattoli/Cinque Torri area, rejoins at Forcella Ambrizzola towards Città di Fiume. 7 bunkrooms, 51 beds (shared rooms with bunk/single beds, 4–10 people). New extension under construction. Sauna at 2000m. Free WiFi. Located on the shores of the stunning Lago Federa. Built 1901 by mountain guide Giovanni Barbaria. Run by Alverà Modesto 'Pacifico' and wife Monica since 1994. Monica's ricotta cake and strudel are legendary. Open June–November. No heated boot room. One hiker's favorite rifugio on AV1 — 'It wasn't the nicest but it was in such a cool location and the food was almost as good as Scotoni.' Coordinates confirmed via CAI (prenotarifugi.cai.it)."
+  },
+  {
+    "id": "passo_giau",
+    "name": "Hotel Passo Giau",
+    "type": "hotel",
+    "km_from_start": 53,
+    "altitude_m": 2236,
+    "lat": 46.483104,
+    "lng": 12.053336,
+
+    "on_trail": true,
+    "detour_km": null,
+    "detour_elevation_gain_m": null,
+    "detour_elevation_loss_m": null,
+    "detour_duration_min": null,
+    "detour_from_km": null,
+
+    "accommodation": {
+      "capacity": null,
+      "room_types": ["private"],
+      "half_board_eur": null,
+      "bed_only_eur": null,
+      "has_showers": true,
+      "hot_water": true,
+      "meals": true,
+      "packed_lunch": null,
+      "charging": true,
+      "wifi": true,
+      "blankets_provided": true,
+      "sleeping_bag_required": false
+    },
+
+    "booking": {
+      "method": "online",
+      "platform": null,
+      "website": "https://www.passogiau.it/",
+      "booking_url": "https://www.passogiau.it/",
+      "email": "",
+      "phone": "",
+      "bookings_open": "",
+      "deposit_eur": null,
+      "cancellation_policy": "",
+      "scraper_status": "not_built",
+      "scraper_notes": ""
+    },
+
+    "notes": "Full hotel at the top of Passo Giau. A comfort option on the route."
+  },
+
+  {
+    "id": "malga_giau",
+    "name": "Malga Giau",
+    "type": "malga",
+    "km_from_start": 54,
+    "altitude_m": 1900,
+    "lat": 46.493040,
+    "lng": 12.065389,
+
+    "on_trail": false,
+    "detour_km": 1.0,
+    "detour_elevation_gain_m": null,
+    "detour_elevation_loss_m": null,
+    "detour_duration_min": null,
+    "detour_from_km": 53,
+
+    "accommodation": {
+      "capacity": null,
+      "room_types": null,
+      "half_board_eur": null,
+      "bed_only_eur": null,
+      "has_showers": null,
+      "hot_water": null,
+      "meals": true,
+      "packed_lunch": null,
+      "charging": null,
+      "wifi": null,
+      "blankets_provided": null,
+      "sleeping_bag_required": null
+    },
+
+    "booking": {
+      "method": "",
+      "platform": null,
+      "website": "https://www.malgagiau.it/en/",
+      "booking_url": "",
+      "email": "",
+      "phone": "",
+      "bookings_open": "",
+      "deposit_eur": null,
+      "cancellation_policy": "",
+      "scraper_status": "not_built",
+      "scraper_notes": ""
+    },
+
+    "notes": "Mountain farm near Passo Giau with accommodation and dining."
+  },
+
+  {
+    "id": "citta_di_fiume",
+    "name": "Rifugio Città di Fiume",
+    "type": "rifugio",
+    "km_from_start": 63,
+    "altitude_m": 1917,
+    "lat": 46.436904,
+    "lng": 12.122573,
+
+    "on_trail": true,
+    "detour_km": null,
+    "detour_elevation_gain_m": null,
+    "detour_elevation_loss_m": null,
+    "detour_duration_min": null,
+    "detour_from_km": null,
+
+    "accommodation": {
+      "capacity": null,
+      "room_types": ["dorm", "private"],
+      "half_board_eur": null,
+      "bed_only_eur": null,
+      "has_showers": null,
+      "hot_water": null,
+      "meals": true,
+      "packed_lunch": null,
+      "charging": null,
+      "wifi": null,
+      "blankets_provided": null,
+      "sleeping_bag_required": null
+    },
+
+    "booking": {
+      "method": "email",
+      "platform": null,
+      "website": "https://www.rifugiocittadifiume.it/",
+      "booking_url": "",
+      "email": "info@rifugiocittadifiume.it",
+      "phone": "+39 320 0377432",
+      "bookings_open": "",
+      "deposit_eur": null,
+      "cancellation_policy": "",
+      "scraper_status": "not_built",
+      "scraper_notes": ""
+    },
+
+    "notes": "Located at the base of Monte Pelmo."
+  },
+
+  {
+    "id": "passo_staulanza",
+    "name": "Rifugio Passo Staulanza",
+    "type": "rifugio",
+    "km_from_start": 67,
+    "altitude_m": 1766,
+    "lat": 46.421007,
+    "lng": 12.104511,
+
+    "on_trail": true,
+    "detour_km": null,
+    "detour_elevation_gain_m": null,
+    "detour_elevation_loss_m": null,
+    "detour_duration_min": null,
+    "detour_from_km": null,
+
+    "accommodation": {
+      "capacity": null,
+      "room_types": ["dorm", "private"],
+      "half_board_eur": null,
+      "bed_only_eur": null,
+      "has_showers": null,
+      "hot_water": null,
+      "meals": true,
+      "packed_lunch": null,
+      "charging": null,
+      "wifi": null,
+      "blankets_provided": null,
+      "sleeping_bag_required": null
+    },
+
+    "booking": {
+      "method": "online / email",
+      "platform": null,
+      "website": "http://www.staulanza.it/",
+      "booking_url": "http://www.staulanza.it/",
+      "email": "info@staulanza.it",
+      "phone": "+39 338 7900120",
+      "bookings_open": "",
+      "deposit_eur": null,
+      "cancellation_policy": "",
+      "scraper_status": "not_built",
+      "scraper_notes": ""
+    },
+
+    "notes": "More like a small hotel than a rifugio. Considered quite luxurious for AV1 standards. Also reachable by phone: +39 0437 788709."
+  },
+  {
+    "id": "malga_boi_vescova",
+    "name": "Malga Boi Vescovà",
+    "type": "malga",
+    "km_from_start": 70,
+    "altitude_m": 1740,
+    "lat": 46.419253,
+    "lng": 12.075193,
+  
+    "on_trail": false,
+    "detour_km": 3.0,
+    "detour_elevation_gain_m": null,
+    "detour_elevation_loss_m": null,
+    "detour_duration_min": null,
+    "detour_from_km": 67,
+  
+    "accommodation": null,
+  
+    "booking": null,
+  
+    "notes": "⚠️ NO OVERNIGHT ACCOMMODATION — food & drink stop only. Working alpine dairy run by the Cadorin family for 3 generations. Famous for homemade cheese, salumi, gnocchi, and polenta. Milk from grass-only-fed cows (no grain/feed). Located on the easier AV1 variant that follows the paved road from Passo Staulanza to Alleghe/Col dei Baldi — note: this variant involves significant road walking. Reachable from Col dei Baldi chairlift (Alleghe) via trail 561 (~15 min). Coordinates approximate — verify on Google Maps."
+  },
+  {
+    "id": "coldai",
+    "name": "Rifugio Coldai",
+    "type": "rifugio",
+    "km_from_start": 74,
+    "altitude_m": 2132,
+    "lat": 46.399383,
+    "lng": 12.068877,
+
+    "on_trail": true,
+    "detour_km": null,
+    "detour_elevation_gain_m": null,
+    "detour_elevation_loss_m": null,
+    "detour_duration_min": null,
+    "detour_from_km": null,
+
+    "accommodation": {
+      "capacity": null,
+      "room_types": ["dorm"],
+      "half_board_eur": null,
+      "bed_only_eur": null,
+      "has_showers": true,
+      "hot_water": true,
+      "meals": true,
+      "packed_lunch": null,
+      "charging": null,
+      "wifi": null,
+      "blankets_provided": null,
+      "sleeping_bag_required": null
+    },
+
+    "booking": {
+      "method": "online / email",
+      "platform": null,
+      "website": "https://rifugiocoldai.com/",
+      "booking_url": "https://rifugiocoldai.com/",
+      "email": "infocoldai@gmail.com",
+      "phone": "+39 0437 789160",
+      "bookings_open": "",
+      "deposit_eur": null,
+      "cancellation_policy": "",
+      "scraper_status": "not_built",
+      "scraper_notes": ""
+    },
+
+    "notes": "Electricity generated from water from the lake. Shower €5 for 6 min. Can be crowded. Amazing sunset views. Near Lago Coldai."
+  },
+
+  {
+    "id": "tissi",
+    "name": "Rifugio Tissi",
+    "type": "rifugio",
+    "km_from_start": 76,
+    "altitude_m": 2250,
+    "lat": 46.388077,
+    "lng": 12.033264,
+
+    "on_trail": true,
+    "detour_km": null,
+    "detour_elevation_gain_m": null,
+    "detour_elevation_loss_m": null,
+    "detour_duration_min": null,
+    "detour_from_km": null,
+
+    "accommodation": {
+      "capacity": null,
+      "room_types": ["dorm"],
+      "half_board_eur": null,
+      "bed_only_eur": null,
+      "has_showers": true,
+      "hot_water": true,
+      "meals": true,
+      "packed_lunch": null,
+      "charging": null,
+      "wifi": null,
+      "blankets_provided": null,
+      "sleeping_bag_required": null
+    },
+
+    "booking": {
+      "method": "online / email",
+      "platform": null,
+      "website": "https://rifugiotissi.com/",
+      "booking_url": "https://rifugiotissi.com/EN/p40-Rates-and-Reservations",
+      "email": "rifugio.tissi@gmail.com",
+      "phone": "+39 0437 721644",
+      "bookings_open": "",
+      "deposit_eur": null,
+      "cancellation_policy": "",
+      "scraper_status": "not_built",
+      "scraper_notes": ""
+    },
+
+    "notes": "Quieter alternative to Coldai. Squat toilets. Shower €5 for 5 min (cannot stop/start). Spectacular sunset views and panoramic lookout above hut. Also on Munich-Venice trail. Mobile: +39 347 593 1833."
+  },
+
+  {
+    "id": "vazzoler",
+    "name": "Rifugio Vazzoler",
+    "type": "rifugio",
+    "km_from_start": 82,
+    "altitude_m": 1714,
+    "lat": 46.354094,
+    "lng": 12.030986,
+
+    "on_trail": true,
+    "detour_km": null,
+    "detour_elevation_gain_m": null,
+    "detour_elevation_loss_m": null,
+    "detour_duration_min": null,
+    "detour_from_km": null,
+
+    "accommodation": {
+      "capacity": null,
+      "room_types": ["dorm", "private"],
+      "half_board_eur": null,
+      "bed_only_eur": null,
+      "has_showers": true,
+      "hot_water": true,
+      "meals": true,
+      "packed_lunch": null,
+      "charging": null,
+      "wifi": null,
+      "blankets_provided": null,
+      "sleeping_bag_required": null
+    },
+
+    "booking": {
+      "method": "online",
+      "platform": null,
+      "website": "https://www.rifugiovazzoler.com/",
+      "booking_url": "https://rifugiovazzoler.com/Booking/index_en.php",
+      "email": "rifugiovazzoler@gmail.com",
+      "phone": "+39 0437 1956619",
+      "bookings_open": "",
+      "deposit_eur": null,
+      "cancellation_policy": "Deposit non-refundable. Full half-board charged if cancelled after 6pm two days before.",
+      "scraper_status": "not_built",
+      "scraper_notes": ""
+    },
+
+    "notes": "Limited generator capacity. 3-minute shower policy. Shower €5 for 3 min. Shower block renovation expected. Antonio Segni Botanical Garden on site."
+  },
+
+  {
+    "id": "capanna_trieste",
+    "name": "Rifugio Capanna Trieste",
+    "type": "rifugio",
+    "km_from_start": 85,
+    "altitude_m": 1135,
+    "lat": 46.344057,
+    "lng": 12.031764,
+
+    "on_trail": false,
+    "detour_km": 3.0,
+    "detour_elevation_gain_m": null,
+    "detour_elevation_loss_m": null,
+    "detour_duration_min": null,
+    "detour_from_km": 82,
+
+    "accommodation": {
+      "capacity": null,
+      "room_types": null,
+      "half_board_eur": null,
+      "bed_only_eur": null,
+      "has_showers": null,
+      "hot_water": null,
+      "meals": true,
+      "packed_lunch": null,
+      "charging": null,
+      "wifi": null,
+      "blankets_provided": null,
+      "sleeping_bag_required": null
+    },
+
+    "booking": {
+      "method": "",
+      "platform": null,
+      "website": "",
+      "booking_url": "",
+      "email": "",
+      "phone": "",
+      "bookings_open": "",
+      "deposit_eur": null,
+      "cancellation_policy": "",
+      "scraper_status": "not_built",
+      "scraper_notes": ""
+    },
+
+    "notes": "Popular exit/bailout point. Near Listolade bus stop."
+  },
+
+  {
+    "id": "carestiato",
+    "name": "Rifugio Carestiato",
+    "type": "rifugio",
+    "km_from_start": 91,
+    "altitude_m": 1834,
+    "lat": 46.321423,
+    "lng": 12.070484,
+
+    "on_trail": true,
+    "detour_km": null,
+    "detour_elevation_gain_m": null,
+    "detour_elevation_loss_m": null,
+    "detour_duration_min": null,
+    "detour_from_km": null,
+
+    "accommodation": {
+      "capacity": null,
+      "room_types": ["dorm"],
+      "half_board_eur": null,
+      "bed_only_eur": null,
+      "has_showers": true,
+      "hot_water": true,
+      "meals": true,
+      "packed_lunch": null,
+      "charging": null,
+      "wifi": null,
+      "blankets_provided": null,
+      "sleeping_bag_required": null
+    },
+
+    "booking": {
+      "method": "online / email",
+      "platform": null,
+      "website": "https://www.rifugiocarestiato.com/",
+      "booking_url": "https://www.rifugiocarestiato.com/",
+      "email": "info@rifugiocarestiato.com",
+      "phone": "+39 0437 62949",
+      "bookings_open": "",
+      "deposit_eur": null,
+      "cancellation_policy": "",
+      "scraper_status": "not_built",
+      "scraper_notes": ""
+    },
+
+    "notes": "Shower €1 for 2 min."
+  },
+
+  {
+    "id": "passo_duran",
+    "name": "Rifugio Passo Duran (C. Tomé)",
+    "type": "rifugio",
+    "km_from_start": 93,
+    "altitude_m": 1605,
+    "lat": 46.324172,
+    "lng": 12.095258,
+
+    "on_trail": false,
+    "detour_km": 1.0,
+    "detour_elevation_gain_m": null,
+    "detour_elevation_loss_m": null,
+    "detour_duration_min": null,
+    "detour_from_km": 92,
+
+    "accommodation": {
+      "capacity": null,
+      "room_types": ["dorm", "private"],
+      "half_board_eur": null,
+      "bed_only_eur": null,
+      "has_showers": null,
+      "hot_water": null,
+      "meals": true,
+      "packed_lunch": null,
+      "charging": null,
+      "wifi": null,
+      "blankets_provided": null,
+      "sleeping_bag_required": null
+    },
+
+    "booking": {
+      "method": "online / email",
+      "platform": null,
+      "website": "https://www.rifugiopassoduran.it/",
+      "booking_url": "https://www.rifugiopassoduran.it/",
+      "email": "info@rifugiopassoduran.it",
+      "phone": "+39 379 2501937",
+      "bookings_open": "",
+      "deposit_eur": null,
+      "cancellation_policy": "",
+      "scraper_status": "not_built",
+      "scraper_notes": ""
+    },
+
+    "notes": "At Passo Duran. Two options at this pass: Rifugio C. Tomé or Rifugio San Sebastiano."
+  },
+
+  {
+    "id": "san_sebastiano",
+    "name": "Rifugio San Sebastiano",
+    "type": "rifugio",
+    "km_from_start": 93,
+    "altitude_m": 1605,
+    "lat": 46.325240,
+    "lng": 12.095766,
+
+    "on_trail": false,
+    "detour_km": 1.0,
+    "detour_elevation_gain_m": null,
+    "detour_elevation_loss_m": null,
+    "detour_duration_min": null,
+    "detour_from_km": 92,
+
+    "accommodation": {
+      "capacity": null,
+      "room_types": null,
+      "half_board_eur": null,
+      "bed_only_eur": null,
+      "has_showers": null,
+      "hot_water": null,
+      "meals": true,
+      "packed_lunch": null,
+      "charging": null,
+      "wifi": null,
+      "blankets_provided": null,
+      "sleeping_bag_required": null
+    },
+
+    "booking": {
+      "method": "",
+      "platform": null,
+      "website": "",
+      "booking_url": "",
+      "email": "",
+      "phone": "",
+      "bookings_open": "",
+      "deposit_eur": null,
+      "cancellation_policy": "",
+      "scraper_status": "not_built",
+      "scraper_notes": ""
+    },
+
+    "notes": "Second accommodation option at Passo Duran, alongside Rifugio C. Tomé."
+  },
+
+  {
+    "id": "pramperet",
+    "name": "Rifugio Sommariva al Pramperet",
+    "type": "rifugio",
+    "km_from_start": 98,
+    "altitude_m": 1857,
+    "lat": 46.288980,
+    "lng": 12.163671,
+
+    "on_trail": true,
+    "detour_km": null,
+    "detour_elevation_gain_m": null,
+    "detour_elevation_loss_m": null,
+    "detour_duration_min": null,
+    "detour_from_km": null,
+
+    "accommodation": {
+      "capacity": 25,
+      "room_types": ["dorm"],
+      "half_board_eur": null,
+      "bed_only_eur": null,
+      "has_showers": true,
+      "hot_water": true,
+      "meals": true,
+      "packed_lunch": null,
+      "charging": null,
+      "wifi": null,
+      "blankets_provided": null,
+      "sleeping_bag_required": null
+    },
+
+    "booking": {
+      "method": "email",
+      "platform": null,
+      "website": "https://www.rifugiosommarivaalpramperet.it",
+      "booking_url": "",
+      "email": "info@rifugiosommarivaalpramperet.it",
+      "phone": "+39 0437 1956153",
+      "bookings_open": "",
+      "deposit_eur": null,
+      "cancellation_policy": "",
+      "scraper_status": "not_built",
+      "scraper_notes": ""
+    },
+
+    "notes": "Built 1923. 25 beds. Shower €3 for 3 min (can switch on/off). In the heart of the Dolomiti Bellunesi National Park. Wild, unspoilt Dolomite scenery."
+  },
+
+  {
+    "id": "pian_de_fontana",
+    "name": "Rifugio Pian de Fontana",
+    "type": "rifugio",
+    "km_from_start": 105,
+    "altitude_m": 1632,
+    "lat": 46.261945,
+    "lng": 12.175924,
+
+    "on_trail": true,
+    "detour_km": null,
+    "detour_elevation_gain_m": null,
+    "detour_elevation_loss_m": null,
+    "detour_duration_min": null,
+    "detour_from_km": null,
+
+    "accommodation": {
+      "capacity": 24,
+      "room_types": ["dorm"],
+      "half_board_eur": null,
+      "bed_only_eur": null,
+      "has_showers": true,
+      "hot_water": false,
+      "meals": true,
+      "packed_lunch": null,
+      "charging": null,
+      "wifi": null,
+      "blankets_provided": null,
+      "sleeping_bag_required": null
+    },
+
+    "booking": {
+      "method": "email",
+      "platform": null,
+      "website": "http://www.piandefontana.it/",
+      "booking_url": "",
+      "email": "piandefontana@livecom.it",
+      "phone": "+39 335 6096819",
+      "bookings_open": "",
+      "deposit_eur": null,
+      "cancellation_policy": "",
+      "scraper_status": "not_built",
+      "scraper_notes": ""
+    },
+
+    "notes": "Last rifugio on AV1 before descent to Belluno. 24 beds. Dorm only (fold-out cots). Cold showers only. Shower €4 for 15L. Pulley supply system. Owned by CAI."
+  },
+
+  {
+    "id": "bianchet",
+    "name": "Rifugio Furio Bianchet",
+    "type": "rifugio",
+    "km_from_start": 115,
+    "altitude_m": 1245,
+    "lat": 46.243458,
+    "lng": 12.161337,
+
+    "on_trail": true,
+    "detour_km": null,
+    "detour_elevation_gain_m": null,
+    "detour_elevation_loss_m": null,
+    "detour_duration_min": null,
+    "detour_from_km": null,
+
+    "accommodation": {
+      "capacity": null,
+      "room_types": ["dorm"],
+      "half_board_eur": null,
+      "bed_only_eur": null,
+      "has_showers": null,
+      "hot_water": null,
+      "meals": true,
+      "packed_lunch": null,
+      "charging": null,
+      "wifi": null,
+      "blankets_provided": null,
+      "sleeping_bag_required": null
+    },
+
+    "booking": {
+      "method": "email",
+      "platform": null,
+      "website": "",
+      "booking_url": "",
+      "email": "rifugiobianchet@hotmail.com",
+      "phone": "+39 0437 669226",
+      "bookings_open": "",
+      "deposit_eur": null,
+      "cancellation_policy": "",
+      "scraper_status": "not_built",
+      "scraper_notes": ""
+    },
+
+    "notes": "Near the end of AV1 before descent to La Pissa/Belluno. Mobile: +39 335 6446975."
+  },
+  
+  {
+    "id": "settimo_alpini",
+    "name": "Rifugio 7° Alpini (Settimo Alpini)",
+    "type": "rifugio",
+    "km_from_start": 113,
+    "altitude_m": 1502,
+    "lat": 46.221946,
+    "lng": 12.188772,
+  
+    "on_trail": true,
+    "detour_km": null,
+    "detour_elevation_gain_m": null,
+    "detour_elevation_loss_m": null,
+    "detour_duration_min": null,
+    "detour_from_km": null,
+  
+    "accommodation": {
+      "capacity": 50,
+      "room_types": ["dorm"],
+      "half_board_eur": null,
+      "bed_only_eur": 34.50,
+      "has_showers": true,
+      "hot_water": true,
+      "meals": true,
+      "packed_lunch": null,
+      "charging": true,
+      "wifi": true,
+      "blankets_provided": null,
+      "sleeping_bag_required": null
+    },
+  
+    "booking": {
+      "method": "email / phone / contact form",
+      "platform": "prenotarifugi.cai.it",
+      "website": "https://www.rifugiosettimoalpini.it/en/",
+      "booking_url": "https://www.rifugiosettimoalpini.it/en/contatti/",
+      "email": "",
+      "phone": "+39 0437 941631",
+      "bookings_open": "Season: 08 Jun – last Sun of Sep",
+      "deposit_eur": null,
+      "cancellation_policy": "",
+      "scraper_status": "not_built",
+      "scraper_notes": "Also on prenotarifugi.cai.it (CAI booking platform). Mobile: +39 340 0016896 / +39 347 8801913"
+    },
+  
+    "notes": "⚠️ LAST STAGE OF ALTA VIA 1 (classic route). Inaugurated 1951. Owned by CAI Belluno, run by Chiara and Fabrizio. 50 beds in rooms of 4-9. Hot showers ('while it lasts!'). Simple cuisine with local products. Via ferrata equipment rental available (book in advance). Guided alpine guide service offered for via ferrata. Located in Dolomiti Bellunesi National Park, at the foot of the south face of Monte Schiara, in the wild Pis Pilon basin. Winter bivouac (Bivacco Severino Lussato) nearby with 5 beds. The CLASSIC AV1 reaches here via the Via Ferrata Piero Rossi (ex Marmol) from Pian de Fontana — requires via ferrata gear (EEA difficulty). A NON-FERRATA variant also exists. Also a stop on the Munich–Venice trail. CAI member discounts apply (bed only: €34.50 non-members / €27.60 CAI members / €24.15 youth). Email response time: 2-3 days."
+  },
+
+  {
+    "id": "la_pissa",
+    "name": "La Pissa Bus Stop (END)",
+    "type": "bus_stop",
+    "km_from_start": 120,
+    "altitude_m": 400,
+    "lat": 46.230236,
+    "lng": 12.113422,
+    "on_trail": true,
+    "detour_km": null,
+    "detour_elevation_gain_m": null,
+    "detour_elevation_loss_m": null,
+    "detour_duration_min": null,
+    "detour_from_km": null,
+
+    "accommodation": null,
+
+    "booking": null,
+
+    "notes": "End of Alta Via 1. Bus connection to Belluno."
   }
+]

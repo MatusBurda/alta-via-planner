@@ -38,6 +38,7 @@ export function TrailMap() {
 
       const bounds = new mapboxgl.LngLatBounds();
       let boundsHasPoint = false;
+      const hutFeatures: any[] = [];
 
       const extendBoundsDeep = (coords: unknown) => {
         if (!coords) return;
@@ -53,7 +54,23 @@ export function TrailMap() {
         }
       };
 
-      (trailData.huts ?? []).forEach((hut) => {
+      // Support both: root-level array of huts OR { trail, huts, segments }
+      type HutItem = {
+        id?: string;
+        name?: string;
+        type?: string;
+        lat?: number;
+        lng?: number;
+        altitude_m?: number;
+        km_from_start?: number;
+        on_trail?: boolean;
+        detour_km?: number | null;
+        detour_duration_min?: number | null;
+      };
+      const data = trailData as HutItem[] | { huts?: HutItem[] };
+      const huts: HutItem[] = Array.isArray(data) ? data : (data?.huts ?? []);
+
+      huts.forEach((hut) => {
         // Make sure hut has coordinates
         const lat = typeof hut.lat === "number" ? hut.lat : Number(hut.lat);
         const lng = typeof hut.lng === "number" ? hut.lng : Number(hut.lng);
@@ -97,7 +114,59 @@ export function TrailMap() {
 
         bounds.extend([lng, lat]);
         boundsHasPoint = true;
+
+        hutFeatures.push({
+          type: "Feature",
+          geometry: {
+            type: "Point",
+            coordinates: [lng, lat],
+          },
+          properties: {
+            id: hut.id,
+            name: hut.name,
+            type: hut.type,
+            altitude_m: hut.altitude_m,
+            km_from_start: hut.km_from_start,
+            on_trail: hut.on_trail,
+          },
+        });
       });
+
+      // Add a circle layer for huts so they are clearly visible even when zoomed out
+      if (hutFeatures.length) {
+        if (m.getLayer("huts-circle")) {
+          m.removeLayer("huts-circle");
+        }
+        if (m.getSource("huts")) {
+          m.removeSource("huts");
+        }
+        m.addSource("huts", {
+          type: "geojson",
+          data: {
+            type: "FeatureCollection",
+            features: hutFeatures,
+          },
+        });
+        m.addLayer({
+          id: "huts-circle",
+          type: "circle",
+          source: "huts",
+          paint: {
+            "circle-radius": 5,
+            "circle-color": [
+              "match",
+              ["get", "type"],
+              "trailhead",
+              "#10b981", // green
+              "hotel",
+              "#6366f1", // purple
+              "#f59e0b", // amber default
+            ],
+            "circle-stroke-width": 1,
+            "circle-stroke-color": "#111827",
+          },
+        });
+      }
 
       // Ensure all huts are visible initially
       if (boundsHasPoint) {
@@ -189,6 +258,8 @@ export function TrailMap() {
       </div>
     );
   }
+
+  
 
   return (
     <div
