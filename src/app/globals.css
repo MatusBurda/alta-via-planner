@@ -1,26 +1,71 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+
+  --color-summit: #09090b;
+  --color-ink: #18181b;
+  --color-base: #fafafa;
+  --color-paper: #f4f4f5;
+  --color-line: #e4e4e7;
+  --color-mute: #71717a;
+  --color-faint: #a1a1aa;
+  --color-glacier: #047857;
+  --color-warn: #b45309;
+  --color-alert: #b91c1c;
+  --color-border: var(--color-line);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  body {
+    @apply bg-base text-summit font-sans antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  ::selection {
+    background: var(--color-summit);
+    color: var(--color-base);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@utility topo-grid {
+  background-image:
+    linear-gradient(90deg, rgba(9, 9, 11, 0.03) 1px, transparent 1px),
+    linear-gradient(rgba(9, 9, 11, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+@utility field-input {
+  @apply w-full bg-base text-summit font-mono text-sm rounded-sm px-3 py-2
+    ring-1 ring-summit/10 transition-colors
+    focus:outline-none focus:ring-summit/30;
+}
+
+@utility label-mono {
+  @apply text-[10px] font-mono uppercase text-faint tracking-widest;
+}
+
+@utility section-mono {
+  @apply text-sm font-mono uppercase font-semibold text-mute tracking-widest;
+}
+
+@utility meta-mono {
+  @apply text-[10px] font-mono uppercase text-mute tracking-widest;
+}
+
+@utility data-mono {
+  @apply font-mono text-sm tracking-tight;
+}
+
+@utility tag-mono {
+  @apply text-[10px] font-mono uppercase tracking-widest;
 }

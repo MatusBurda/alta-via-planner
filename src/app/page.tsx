@@ -1,61 +1,62 @@
-"use client";
+import type { Metadata } from "next";
+import SiteHeader from "@/components/site-header";
+import RouteCard from "@/components/route-card";
+import { featuredRoutes } from "@/lib/routes";
 
-import { useState } from "react";
-import TrailMap from "@/components/map/trail-map";
-import PlannerInput from "@/components/planner-input";
-import ItineraryList from "@/components/itinerary-list";
-import { findItineraries, Itinerary } from "@/lib/planner";
-import trailData from "@/data/trail-data.json";
-import mockAvailability from "@/data/mock-availability.json";
+export const metadata: Metadata = {
+    title: "Alta Via.OS — Plan Your Hut-to-Hut Trek",
+    description:
+        "Alpine refuges book out fast and must be reserved in order along the route. Check if your dates work, with auto-adjusted stages and hotel detours when huts are full.",
+};
 
-// Prepare data once
-const availability: Record<string, Record<string, string>> = {};
-for (const [hutId, dates] of Object.entries(mockAvailability)) {
-  availability[hutId] = {};
-  for (const [date, info] of Object.entries(dates)) {
-    availability[hutId][date] = (info as any).status;
-  }
-}
+export default function LandingPage() {
+    return (
+        <main className="min-h-screen topo-grid">
+            <div className="max-w-7xl mx-auto px-6 pb-16">
+                <SiteHeader />
 
-const huts = trailData
-  .filter((h: any) => h.accommodation !== null || h.id === "lago_di_braies" || h.id === "la_pissa")
-  .map((h: any) => ({
-    id: h.id,
-    name: h.name,
-    km_from_start: h.km_from_start,
-  }));
+                <section className="mt-8 md:mt-16 mb-16 md:mb-24">
+                    <p className="meta-mono mb-4">
+                        Hut-to-hut trek planner
+                    </p>
 
-export default function Home() {
-  const [results, setResults] = useState<Itinerary[]>([]);
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-  const [hasSearched, setHasSearched] = useState(false);
+                    <h1 className="text-5xl md:text-6xl font-semibold tracking-tight leading-none text-balance max-w-[22ch] mb-6">
+                        Plan your hut-to-hut alpine traverse with ease
+                    </h1>
 
-  function handlePlan(startDate: string, maxKm: number, minKm: number) {
-    const itineraries = findItineraries(huts, availability, startDate, maxKm, minKm);
-    setResults(itineraries);
-    setSelectedIndex(itineraries.length > 0 ? 0 : null);
-    setHasSearched(true);
-  }
+                    <p className="text-lg text-mute max-w-[56ch] text-pretty leading-relaxed">
+                        Alpine refuges book out months ahead — and each night depends on the one
+                        before. Enter your dates and pace to see in seconds whether the route is
+                        actually possible. We rebalance stages and route via nearby hotels when beds
+                        run out.
+                    </p>
+                </section>
 
-  const selectedItinerary = selectedIndex !== null ? results[selectedIndex] : null;
+                <section>
+                    <div className="flex items-center justify-between mb-6">
+                        <h2 className="section-mono">
+                            Featured routes
+                        </h2>
+                        <span className="label-mono">
+                            {featuredRoutes.filter((r) => r.available).length} of{" "}
+                            {featuredRoutes.length} bookable
+                        </span>
+                    </div>
 
-  return (
-    <main className="relative w-full h-screen">
-      {/* Full-screen map */}
-      <TrailMap selectedItinerary={selectedItinerary} />
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {featuredRoutes.map((route) => (
+                            <RouteCard key={route.id} route={route} />
+                        ))}
+                    </div>
+                </section>
 
-      {/* Sidebar overlay */}
-      <div className="absolute top-4 left-4 w-80 flex flex-col gap-4 z-10">
-        <PlannerInput onPlan={handlePlan} />
-
-        {hasSearched && (
-          <ItineraryList
-            results={results}
-            selectedIndex={selectedIndex}
-            onSelect={setSelectedIndex}
-          />
-        )}
-      </div>
-    </main>
-  );
+                <footer className="mt-24 pt-8 border-t border-summit/5">
+                    <p className="text-sm text-mute leading-relaxed max-w-[60ch]">
+                        Itineraries are built dynamically from your fitness level, dates, and
+                        simulated hut availability — no spreadsheets required.
+                    </p>
+                </footer>
+            </div>
+        </main>
+    );
 }

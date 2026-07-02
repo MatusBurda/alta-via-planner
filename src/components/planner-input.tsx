@@ -11,33 +11,36 @@ export default function PlannerInput({ onPlan }: PlannerInputProps) {
     const [pace, setPace] = useState("moderate");
 
     const paceSettings: Record<string, { maxKm: number; minKm: number; label: string }> = {
-        relaxed: { maxKm: 14, minKm: 6, label: "Relaxed (6-14 km/day)" },
-        moderate: { maxKm: 18, minKm: 8, label: "Moderate (8-18 km/day)" },
-        strong: { maxKm: 25, minKm: 10, label: "Strong (10-25 km/day)" },
+        relaxed: { maxKm: 14, minKm: 6, label: "Relaxed · 6–14 km/day" },
+        moderate: { maxKm: 18, minKm: 8, label: "Moderate · 8–18 km/day" },
+        strong: { maxKm: 25, minKm: 10, label: "Strong · 10–25 km/day" },
     };
 
     return (
-        <div className="flex flex-col gap-4 p-6 bg-white rounded-xl shadow-lg">
-            <h2 className="text-lg font-bold">Plan your Alta Via 1</h2>
+        <div className="flex flex-col gap-5 p-5 bg-paper ring-1 ring-summit/15 rounded-lg shadow-[0_1px_0_rgba(9,9,11,0.04)]">
+            <div>
+                <p className="meta-mono mb-1">Region: Dolomites · IT</p>
+                <h2 className="section-mono">Plan expedition</h2>
+            </div>
 
-            <div className="flex flex-col gap-1">
-                <label className="text-sm font-medium text-gray-700">Start date</label>
+            <div className="flex flex-col gap-1.5">
+                <label className="label-mono">Start date</label>
                 <input
                     type="date"
                     value={startDate}
                     min="2026-06-15"
                     max="2026-09-10"
                     onChange={(e) => setStartDate(e.target.value)}
-                    className="border rounded-lg px-3 py-2 text-sm"
+                    className="field-input"
                 />
             </div>
 
-            <div className="flex flex-col gap-1">
-                <label className="text-sm font-medium text-gray-700">Pace</label>
+            <div className="flex flex-col gap-1.5">
+                <label className="label-mono">Pace</label>
                 <select
                     value={pace}
                     onChange={(e) => setPace(e.target.value)}
-                    className="border rounded-lg px-3 py-2 text-sm"
+                    className="field-input"
                 >
                     {Object.entries(paceSettings).map(([key, val]) => (
                         <option key={key} value={key}>{val.label}</option>
@@ -50,7 +53,7 @@ export default function PlannerInput({ onPlan }: PlannerInputProps) {
                     const { maxKm, minKm } = paceSettings[pace];
                     onPlan(startDate, maxKm, minKm);
                 }}
-                className="bg-emerald-600 text-white font-medium px-4 py-2 rounded-lg hover:bg-emerald-700 transition"
+                className="text-sm font-medium bg-summit text-base px-4 py-2.5 rounded-sm ring-1 ring-summit hover:bg-ink transition-colors"
             >
                 Find routes
             </button>
